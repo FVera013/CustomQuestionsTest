@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 
 class CallToAction extends StatelessWidget {
   final String title;
-  final double horizontalInset;
-  const CallToAction(this.title, this.horizontalInset);
+  const CallToAction(this.title);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: horizontalInset, vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
       child: Text(
         title,
         style: TextStyle(

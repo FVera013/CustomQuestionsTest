@@ -1,4 +1,3 @@
-import 'package:custom_questions_test/widgets/call_to_action/call_to_action.dart';
 import 'package:custom_questions_test/widgets/call_to_action/call_to_action_start_stats.dart';
 import 'package:custom_questions_test/widgets/centered_view/centered_view.dart';
 import 'package:flutter/cupertino.dart';

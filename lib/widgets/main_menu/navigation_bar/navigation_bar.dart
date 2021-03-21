@@ -1,3 +1,5 @@
+import 'package:custom_questions_test/widgets/main_menu/navigation_bar/nav_bar_item.dart';
+import 'package:custom_questions_test/widgets/main_menu/navigation_bar/nav_bar_no_item.dart';
 import 'package:flutter/cupertino.dart';
 
 class NavigationBar extends StatelessWidget {
@@ -15,32 +17,13 @@ class NavigationBar extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _NavBarItem('questions_icon'),
-              SizedBox(
-                width: 60,
-              ),
-              _NavBarItem('settings_icon'),
+              NavBarItem('questions_icon'),
+              NavBarNoItem(),
+              NavBarItem('settings_icon'),
             ],
           )
         ],
       ),
-    );
-  }
-}
-
-class _NavBarItem extends StatelessWidget {
-  final String imageName;
-  const _NavBarItem(
-    this.imageName, {
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40,
-      width: 40,
-      child: Image.asset('assets/images/' + imageName + '.png'),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:custom_questions_test/constants/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,25 +8,26 @@ class CallToActionStartStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+    return ElevatedButton(
+      onPressed: () => null,
       child: SizedBox(
-        width: 100,
-        child: Expanded(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
+          width: 200,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+              ),
             ),
-            textAlign: TextAlign.center,
-          ),
+          )),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateColor.resolveWith(
+          (states) => greenForButtons,
         ),
-      ),
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 31, 229, 146),
-        borderRadius: BorderRadius.circular(5),
       ),
     );
   }
