@@ -1,3 +1,4 @@
+import 'package:custom_questions_test/constants/names/names.dart';
 import 'package:custom_questions_test/widgets/main_menu/navigation_bar/nav_bar_item.dart';
 import 'package:custom_questions_test/widgets/main_menu/navigation_bar/nav_bar_no_item.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,9 +18,9 @@ class NavigationBar extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              NavBarItem('questions_icon'),
+              NavBarItem(questionsIconString),
               NavBarNoItem(),
-              NavBarItem('settings_icon'),
+              NavBarItem(settingsIconString),
             ],
           )
         ],
