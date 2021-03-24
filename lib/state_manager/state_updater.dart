@@ -16,11 +16,13 @@ void stateUpdater(
   Widget destination,
 }) {
   if (pushingForwards) {
+    print('you are pushing forwards in stateupdater!');
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => destination),
     );
   } else {
+    print('you are popping backwards in stateupdater!');
     Navigator.pop(context);
   }
 }

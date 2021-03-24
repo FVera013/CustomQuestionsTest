@@ -2,6 +2,7 @@ import 'package:custom_questions_test/constants/colors/colors.dart';
 import 'package:custom_questions_test/constants/names/names.dart';
 import 'package:custom_questions_test/state_manager/state_updater.dart';
 import 'package:custom_questions_test/views/question/question_view.dart';
+import 'package:custom_questions_test/views/stats/stats_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +39,7 @@ class CallToActionStartStats extends StatelessWidget {
   void _whenOnPressed(String title, BuildContext context) {
     switch (title) {
       case startGameString:
+        print('Going to QuestionView!');
         stateUpdater(
           context,
           destination: QuestionView(),
@@ -47,6 +49,8 @@ class CallToActionStartStats extends StatelessWidget {
       case statsString:
         stateUpdater(
           context,
+          destination: StatsView(),
+          pushingForwards: true,
         );
         break;
       default:

@@ -16,7 +16,7 @@ class NavBarItem extends StatelessWidget {
       height: 40,
       width: 40,
       child: IconButton(
-        onPressed: () => null,
+        onPressed: () => _whenOnPressed(),
         icon: itemImage,
         focusColor: Colors.red,
         iconSize: double.infinity,
@@ -26,4 +26,6 @@ class NavBarItem extends StatelessWidget {
       ),
     );
   }
+
+  void _whenOnPressed() {}
 }
