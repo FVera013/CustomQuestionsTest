@@ -16,7 +16,7 @@ class NavBarItemSettings extends StatelessWidget {
         icon: itemImage,
         alignment: Alignment.center,
         padding: EdgeInsets.all(0),
-        tooltip: 'Change the List of Questions',
+        tooltip: 'Edit Game Settings',
         autofocus: false,
       ),
     );
