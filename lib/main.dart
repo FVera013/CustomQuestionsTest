@@ -1,7 +1,14 @@
-import 'package:custom_questions_test/views/home/home_view.dart';
+import 'package:custom_questions_test/locator.dart';
+import 'package:custom_questions_test/routing/route_names.dart';
+import 'package:custom_questions_test/routing/router.dart';
+import 'package:custom_questions_test/services/navigation_service.dart';
+import 'package:custom_questions_test/views/layout_template.dart';
 import 'package:flutter/material.dart';
+import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
 
 void main() {
+  setupLocator();
+  configureApp();
   runApp(MyApp());
 }
 
@@ -18,7 +25,12 @@ class MyApp extends StatelessWidget {
             ),
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      builder: (context, child) => LayoutTemplate(
+        child: child,
+      ),
+      navigatorKey: locator<NavigationService>().navigatorKey,
+      onGenerateRoute: generateRoute,
+      initialRoute: HomeRoute,
     );
   }
 }

@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
       body: CenteredView(
         child: Column(
           children: [
-            NavigationBar(isHomeView: true),
+            NavigationBar(true),
             Expanded(child: StartOptions()),
             EmptyNavigationBar(),
           ],

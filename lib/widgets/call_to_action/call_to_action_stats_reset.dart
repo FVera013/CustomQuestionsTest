@@ -1,5 +1,4 @@
 import 'package:custom_questions_test/constants/colors/colors.dart';
-import 'package:custom_questions_test/widgets/custom_text/stats/stats_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

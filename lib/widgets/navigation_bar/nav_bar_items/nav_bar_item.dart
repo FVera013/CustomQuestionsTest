@@ -1,12 +1,14 @@
+import 'package:custom_questions_test/constants/text/text.dart';
+import 'package:custom_questions_test/locator.dart';
+import 'package:custom_questions_test/services/navigation_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavBarItem extends StatelessWidget {
   final String imageName;
-  const NavBarItem(
-    this.imageName, {
-    Key key,
-  }) : super(key: key);
+  final String navigationPath;
+
+  const NavBarItem(this.imageName, this.navigationPath);
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +18,33 @@ class NavBarItem extends StatelessWidget {
       height: 40,
       width: 40,
       child: IconButton(
-        onPressed: () => _whenOnPressed(),
+        onPressed: () {
+          locator<NavigationService>().navigateTo(navigationPath);
+        },
         icon: itemImage,
-        focusColor: Colors.red,
-        iconSize: double.infinity,
-        padding: EdgeInsets.all(0),
-        autofocus: false,
         alignment: Alignment.center,
+        padding: EdgeInsets.all(0),
+        tooltip: _thisToolTip(),
+        autofocus: false,
       ),
     );
   }
 
-  void _whenOnPressed() {}
+  String _thisToolTip() {
+    switch (imageName) {
+      case questionsIconString:
+        return editQuestionsToolTipText;
+        break;
+
+      case settingsIconString:
+        return settingsToolTipText;
+        break;
+
+      case backArrowIconString:
+        return backArrowToolTipText;
+        break;
+
+      default:
+    }
+  }
 }

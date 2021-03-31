@@ -1,19 +1,21 @@
 import 'package:custom_questions_test/constants/colors/colors.dart';
-import 'package:custom_questions_test/constants/names/names.dart';
-import 'package:custom_questions_test/state_manager/state_updater.dart';
-import 'package:custom_questions_test/views/question/question_view.dart';
-import 'package:custom_questions_test/views/stats/stats_view.dart';
+import 'package:custom_questions_test/locator.dart';
+import 'package:custom_questions_test/services/navigation_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CallToActionStartStats extends StatelessWidget {
   final String title;
-  const CallToActionStartStats(this.title);
+  final String navigationPath;
+
+  const CallToActionStartStats(this.title, this.navigationPath);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => _whenOnPressed(title, context),
+      onPressed: () {
+        locator<NavigationService>().navigateTo(navigationPath);
+      },
       child: SizedBox(
           width: 200,
           child: Container(
@@ -34,26 +36,5 @@ class CallToActionStartStats extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _whenOnPressed(String title, BuildContext context) {
-    switch (title) {
-      case startGameString:
-        print('Going to QuestionView!');
-        stateUpdater(
-          context,
-          destination: QuestionView(),
-          pushingForwards: true,
-        );
-        break;
-      case statsString:
-        stateUpdater(
-          context,
-          destination: StatsView(),
-          pushingForwards: true,
-        );
-        break;
-      default:
-    }
   }
 }

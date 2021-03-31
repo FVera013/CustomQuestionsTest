@@ -1,19 +1,20 @@
+import 'package:custom_questions_test/constants/text/text.dart';
+import 'package:custom_questions_test/routing/route_names.dart';
+import 'package:custom_questions_test/widgets/navigation_bar/nav_bar_items/nav_bar_item.dart';
 import 'package:custom_questions_test/widgets/navigation_bar/nav_bar_items/nav_bar_no_item.dart';
 
-import 'package:custom_questions_test/widgets/navigation_bar/nav_bar_items/nav_bar_item_back_arrow.dart';
-import 'package:custom_questions_test/widgets/navigation_bar/nav_bar_items/nav_bar_item_questions.dart';
-import 'package:custom_questions_test/widgets/navigation_bar/nav_bar_items/nav_bar_item_settings.dart';
 import 'package:flutter/cupertino.dart';
 
 class NavigationBar extends StatelessWidget {
   final bool isHomeView;
 
-  const NavigationBar({this.isHomeView = false});
+  const NavigationBar([this.isHomeView = false]);
 
   @override
   Widget build(BuildContext context) {
-    final Widget backArrowIfNotHomeView =
-        isHomeView ? NavBarNoItem() : NavBarItemBackArrow();
+    final Widget backArrowIfNotHomeView = isHomeView
+        ? NavBarNoItem()
+        : NavBarItem(backArrowIconString, HomeRoute);
     return Container(
       height: 100,
       child: Row(
@@ -31,9 +32,9 @@ class NavigationBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              NavBarItemQuestions(),
+              NavBarItem(questionsIconString, EditQuestionsRoute),
               NavBarNoItem(),
-              NavBarItemSettings(),
+              NavBarItem(settingsIconString, SettingsRoute),
             ],
           ),
         ],

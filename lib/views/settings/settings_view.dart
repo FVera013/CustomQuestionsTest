@@ -4,8 +4,8 @@ import 'package:custom_questions_test/widgets/navigation_bar/navigation_bar.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class QuestionView extends StatelessWidget {
-  const QuestionView({Key key}) : super(key: key);
+class SettingsView extends StatelessWidget {
+  const SettingsView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +15,7 @@ class QuestionView extends StatelessWidget {
         child: Column(
           children: [
             NavigationBar(),
-            Expanded(
-              child: Text(
-                'Welcome to the Questions!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black,
-                ),
-              ),
-            ),
+            //Expanded(settingsMenu), //TODO: implement a settings menu
             EmptyNavigationBar(),
           ],
         ),
